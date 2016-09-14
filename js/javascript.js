@@ -253,6 +253,7 @@ $('#thirtyOne .thirtyOneButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtyOne .thirtyOneButton h3').animate({ 'fontSize': '300px'}, 1000);
 });
 //================32================
 $('#thirtyTwo .thirtyTwoButton').click(function() {
@@ -261,6 +262,8 @@ $('#thirtyTwo .thirtyTwoButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtyTwo .thirtyTwoButton h3').animate({ 'fontSize': '300px'}, 1000);
+	$('#thirtyTwo .thirtyTwoButton h3').animate({ 'margin-top': '-200px', 'margin-left': '-300px'}, 1000);
 });
 //================33================
 $('#thirtyThree .thirtyThreeButton').click(function() {
@@ -269,6 +272,7 @@ $('#thirtyThree .thirtyThreeButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtyTwo .thirtyTwoButton h3').delay(500).animate({ 'letter-spacing': '100px'}, 1000);
 });
 //================34================
 $('#thirtyFour .thirtyFourButton').click(function() {
@@ -277,6 +281,12 @@ $('#thirtyFour .thirtyFourButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtyFour .thirtyFourButton h3').animate({ 'fontSize': '600px'}, 1000);
+	$('#thirtyFour .thirtyFourButton h3').delay(300).animate({ 'fontSize': '100px'}, 1000);
+	$('#thirtyFour .thirtyFourButton h3').delay(100).animate({ 'fontSize': '300px'}, 1000);
+	$('#thirtyFour .thirtyFourButton h3').delay(100).animate({ 'fontSize': '50px'}, 1000);
+	$('#thirtyFour .thirtyFourButton h3').delay(100).animate({ 'fontSize': '200px'}, 1000);
+	$('#thirtyFour .thirtyFourButton h3').delay(100).animate({ 'fontSize': '1000px'}, 1000);
 });
 //================35================
 $('#thirtyFive .thirtyFiveButton').click(function() {
@@ -285,6 +295,7 @@ $('#thirtyFive .thirtyFiveButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtyFive .thirtyFiveButton img').animate({ opacity:1}, 310);
 });
 //================36================
 $('#thirtySix .thirtySixButton').click(function() {
@@ -293,6 +304,7 @@ $('#thirtySix .thirtySixButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtySix .thirtySixButton img').animate({ opacity:1}, 310);
 });
 //================37================
 $('#thirtySeven .thirtySevenButton').click(function() {
@@ -301,10 +313,12 @@ $('#thirtySeven .thirtySevenButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#thirtySeven .thirtySevenButton img').animate({ opacity:1}, 310);
 });
 //================38================
 $('#thirtyEight .thirtyEightButton').click(function() {
 	$(this).css({ '-webkit-filter':'brightness(200%)'}, 710);
+	$('#thirtyEight .thirtyEightButton img').animate({ opacity:1}, 310);
 });
 //================39================
 $('#thirtyNine .thirtyNineButton').click(function() {
@@ -327,6 +341,7 @@ $('#fortyOne .fortyOneButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#fortyOne .fortyOneButton img').animate({ opacity:1}, 310);
 });
 //================42================
 $('#fortyTwo .fortyTwoButton').click(function() {
@@ -343,6 +358,10 @@ $('#fortyThree .fortyThreeButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#fortyThree .fortyThreeButton h3').css({ 
+		'fontSize': '400px',
+		'-webkit-transform': 'rotate(-90deg)'
+	});
 });
 //================44================
 $('#fortyFour .fortyFourButton').click(function() {
@@ -358,6 +377,12 @@ $('#fortyFive .fortyFiveButton').click(function() {
 		'-webkit-animation-duration': '1s',
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
+	});
+	$('.fortyFiveButton').css({ 
+		'fontSize': '400px',
+		'-webkit-transform': 'rotate(-90deg)',
+		'width': '300px',
+		'border-radius': '2px'
 	});
 });
 //================46================
@@ -382,7 +407,7 @@ $('#fortyEight .fortyEightButton').click(function() {
 });
 //================49================
 $('#fortyNine .fortyNineButton').click(function() {
-	$("html, body").animate({ scrollTop: "-=700px"}, 1000);
+	$("html, body").animate({ scrollTop: "-=300px"}, 1000);
 	$('#fortyEight .fortyEightButton').css({ '-webkit-filter':'none'}, 710);
 });
 // //================50================
@@ -436,6 +461,7 @@ $('#fiftySix .fiftySixButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#fiftySix img').animate({opacity:1}, 710);
 });
 //================57================
 $('#fiftySeven .fiftySevenButton').click(function() {
@@ -444,6 +470,9 @@ $('#fiftySeven .fiftySevenButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+	$('#fiftySeven img').animate({opacity:1}, 710);
+	$('#fiftySix img').animate({opacity:0}, 710);
+
 });
 //================58================
 $('#fiftyEight .fiftyEightButton').click(function() {
@@ -505,6 +534,7 @@ $('#sixtySix .sixtySixButton').click(function() {
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
+
 });
 //================67================
 $('#sixtySeven .sixtySevenButton').click(function() {
@@ -516,7 +546,7 @@ $('#sixtySeven .sixtySevenButton').click(function() {
 });
 //================68================
 $('#sixtyEight .sixtyEightButton').click(function() {
-	$(this).css({ '-webkit-filter':'blur(5px)'});
+	$(this).css({ '-webkit-filter':'blur(15px)'});
 });
 //================69================
 $('#sixtyNine .sixtyNineButton').click(function() {

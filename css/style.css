@@ -1323,7 +1323,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 650px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1360,7 +1360,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 500px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1421,6 +1421,10 @@
 	#thirtyFive{
 		height: 700px;
 	} 
+	#thirtyFive .thirtyFiveButton img{
+		opacity: 0;
+		margin-top: 100px;
+	}
 	.thirtyFiveButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -1434,7 +1438,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 520px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1458,6 +1462,10 @@
 	#thirtySix{
 		height: 700px;
 	} 
+	#thirtySix .thirtySixButton img{
+		opacity: 0;
+		margin-top: 50px;
+	}
 	.thirtySixButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -1471,7 +1479,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 550px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1495,6 +1503,10 @@
 	#thirtySeven{
 		height: 700px;
 	} 
+	#thirtySeven .thirtySevenButton img{
+		opacity: 0;
+		margin-top: 50px;
+	}
 	.thirtySevenButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -1508,7 +1520,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 550px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1532,6 +1544,10 @@
 	#thirtyEight{
 		height: 700px;
 	} 
+	#thirtyEight .thirtyEightButton img{
+		opacity: 0;
+		margin-top: 50px;
+	}
 	.thirtyEightButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -1545,7 +1561,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 750px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1600,9 +1616,10 @@
 	} 
 
 	#toggle{
-	width: 100px;
-    height: 100px;
-    background: #ccc;
+	margin-top: 50px;
+	width: 900px;
+    height: 400px;
+    background: #9BC53D;
 	}
 /*	#forty iframe{
 		padding-top: 20px;
@@ -1650,6 +1667,11 @@
 	#fortyOne{
 		height: 700px;
 	} 
+	#fortyOne .fortyOneButton img{
+		opacity: 0;
+		margin-left: -180px;
+		margin-top: 50px;
+	}
 	.fortyOneButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -1663,7 +1685,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 50px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -1716,6 +1738,7 @@
 	#fortyThree{
 		height: 700px;
 	} 
+	
 	.fortyThreeButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -1747,7 +1770,7 @@
 	}	
 	/*================44================*/
 	#fortyFour{
-		height: 700px;
+		height: 200px;
 	} 
 	.fortyFourButton {
 		cursor: pointer;
@@ -1813,7 +1836,7 @@
 	}	
 	/*================46================*/
 	#fortySix{
-		height: 700px;
+		height: 200px;
 	} 
 	.fortySixButton {
 		cursor: pointer;
@@ -1879,7 +1902,7 @@
 	}	
 	/*================48================*/
 	#fortyEight{
-		height: 700px;
+		height: 300px;
 	} 
 	.fortyEightButton {
 		cursor: pointer;
@@ -1912,7 +1935,7 @@
 	}	
 	/*================49================*/
 	#fortyNine{
-		height: 700px;
+		height: 300px;
 	} 
 	.fortyNineButton {
 		cursor: pointer;
@@ -2125,6 +2148,9 @@
 	#fiftyFive{
 		height: 700px;
 	} 
+	#fiftyFive img{
+		margin-left: -100px;
+	}
 	.fiftyFiveButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2158,6 +2184,10 @@
 	#fiftySix{
 		height: 700px;
 	} 
+	#fiftySix img{
+		margin-left: -450px;
+		opacity: 0;
+	}
 	.fiftySixButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2191,6 +2221,11 @@
 	#fiftySeven{
 		height: 700px;
 	} 
+
+	#fiftySeven img{
+		margin-left: -450px;
+		opacity: 0;
+	}
 	.fiftySevenButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2468,6 +2503,10 @@
 	#sixtyFive{
 		height: 700px;
 	} 
+	#sixtyFive img{
+		margin-top: 30px;
+		margin-left: -100px;
+	}
 	.sixtyFiveButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2501,6 +2540,9 @@
 	#sixtySix{
 		height: 700px;
 	} 
+	#sixtySix img{
+		margin-left: -100px;
+	}
 	.sixtySixButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2534,6 +2576,10 @@
 	#sixtySeven{
 		height: 700px;
 	} 
+	#sixtySeven img{
+		margin-top: 40px;
+		margin-left: -100px;
+	}
 	.sixtySevenButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2567,6 +2613,9 @@
 	#sixtyEight{
 		height: 700px;
 	} 
+	#sixtyEight img{
+		margin-top: 50px;
+	}
 	.sixtyEightButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2580,7 +2629,7 @@
 		font-family:'Open Sans', sans-serif;
 		font-size:19px;
 		color:#E8EDDF;
-		width: 120px;
+		width: 520px;
 		height: 25px;
 
 		-moz-border-radius:42px;
@@ -2679,6 +2728,10 @@
 	#seventyOne{
 		height: 700px;
 	} 
+	#seventyOne img{
+		margin-top: 40px;
+		margin-left: -100px;
+	}
 	.seventyOneButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2712,6 +2765,10 @@
 	#seventyTwo{
 		height: 700px;
 	} 
+	#seventyTwo img{
+		margin-top: 40px;
+		margin-left: -100px;
+	}
 	.seventyTwoButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2745,6 +2802,10 @@
 	#seventyThree{
 		height: 700px;
 	} 
+	#seventyThree img{
+		margin-top: 40px;
+		margin-left: -100px;
+	}
 	.seventyThreeButton {
 		cursor: pointer;
 		background: #f25a41;
@@ -2778,6 +2839,10 @@
 	#seventyFour{
 		height: 700px;
 	} 
+	#seventyFour img{
+		margin-top: 40px;
+		margin-left: -100px;
+	}
 	.seventyFourButton {
 		cursor: pointer;
 		background: #f25a41;
