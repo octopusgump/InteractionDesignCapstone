@@ -27,7 +27,20 @@
 //#F0F3BD
 
 $(document).ready(function(){
+//================Cover Page================
+	$( ".coverCell" ).click(function() {
+	//$(".coverBackground").delay(330).animate({top: "-=100%"}, 1000);
+});
 
+
+$('.coverCell').click(function(){
+        if ($('.coverCell h1').data('count')) { // already been clicked
+            $('.coverCell h1').data('count', $('.coverCell h1').data('count') + 1); // add one
+        } else { // first click
+            $('.coverCell h1').data('count', 1); // initialize the count
+        }
+        $('.coverCell h1').html($('.coverCell h1').data('count')); // show it
+    });
 //================Add Div================
 //#1 change color
 function getRandomColor() {
