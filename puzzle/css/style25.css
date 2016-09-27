@@ -1,11 +1,6 @@
 .cell {
-	cursor: pointer;
 	width: 20%;
 	height: 100%;
-	margin: 0 auto;
-	float: left;
-	overflow: hidden;
-	position: relative;
 }
 .row{
 	vertical-align: center;
