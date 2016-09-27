@@ -1,18 +1,9 @@
-/*
-#CFDBD5
-#E8EDDF
-#F5CB5C
-#242423
-#333533
-#f25a41
-#9BC53D
-*/
 @import url('http://fonts.googleapis.com/css?family=Open+Sans');
 html, body {
-	height: 100%; 
+	height: 100%;
 	width: 100%;
 	margin: 0;
-	
+
 }
 #bgImage{
 	position: fixed;
@@ -71,7 +62,7 @@ html, body {
 .hintBox h1{
 	font-size: 60px;
 	text-transform: uppercase;
-	color: #E8EDDF; 
+	color: #E8EDDF;
 	margin: 0;
 }
 
@@ -108,7 +99,7 @@ h2 {
 	color: #CFDBD5;
 }
 
-h3{	
+h3{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	font-size: 2rem;

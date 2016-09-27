@@ -1,3 +1,23 @@
+//red
+//#581845
+//#900C3F
+//#C70039
+//#FF5733
+//#FFC30F
+
+//blue
+//84A98C
+//52796F
+//354F52
+//2F3E46
+
+//cryan
+//12E7F7
+//11DBEA
+//10C4D0
+//0C97A1
+//08646A
+
 $(document).ready(function(){
 
 //================Add Div================
@@ -26,7 +46,7 @@ function getFourRandomDiv(){
 	];
 	var selectDiv= allDiv[Math.floor(Math.random() * 7)];
 	return selectDiv;
-}	
+}
 //get a random color set
 function getColorSet(){
 	var colorSet = [
@@ -35,16 +55,16 @@ function getColorSet(){
 		// "#DC0073",
 		// "#008BF8",
 		// "#89FC00",
-		// "#06AED5",
 		// "#086788",
+		// "#06AED5",
 		// "#F0C808",
 		// "#FFF1D0",
 		// "#DD1C1A",
-		"#011627",
-		"#FDFFFC",
-		"#2EC4B6",
-		"#E71D36",
-		"#FF9F1C"
+		// "#011627",
+		// "#FDFFFC",
+		// "#2EC4B6",
+		// "#E71D36",
+		// "#FF9F1C",
 	];
 	var selectColor = colorSet[Math.floor(Math.random() * 5)];
 	return selectColor;
@@ -68,7 +88,7 @@ $('.cell').click(function() {
      	//change opacity
 		// var opacityValue = $( this ).css( "opacity" );
 		// opacityValue = opacityValue - 0.2;
-  		// if(opacityValue < 0) opacityValue = 1;   
+  		// if(opacityValue < 0) opacityValue = 1;
   		// $(this).animate({opacity : opacityValue}, 300);
 
    		//show opacity value
@@ -76,7 +96,7 @@ $('.cell').click(function() {
    		document.getElementById("show").innerHTML = getFourRandomDiv();
    		$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
    		$('.test').css({'width': getRandomBoxWidth()});
-   		$('.hintBox').css({"z-index": '10'}); 
+   		$('.hintBox').css({"z-index": '10'});
    		//$('.hintBox').animate({opacity: '1'}, 300);
    	});
 
@@ -84,17 +104,17 @@ $('.cell').click(function() {
 $( '.cell' ).mouseover(function() {
 	var animateThis = $(this).css('-webkit-animation-iteration-count');
 	if(animateThis <= 2) animateThis = 3;
-	$(this).css({		
+	$(this).css({
 		'-webkit-animation-duration': '1s',
 		'-webkit-animation-delay': '0.5s',
 		'-webkit-animation-iteration-count': 'infinite'
 	});
 });
 $( '.cell' ).mouseout(function() {
-	$(this).css({		
+	$(this).css({
 		'-webkit-animation-iteration-count': '0'
 	});
-	//$('.hintBox').css({"z-index": '0'}); 
+	//$('.hintBox').css({"z-index": '0'});
 	//$('.hintBox').animate({opacity: '0'}, 700);
 });
 
