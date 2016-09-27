@@ -1,0 +1,13 @@
+.cell {
+	cursor: pointer;
+	width: 25%;
+	height: 100%;
+	margin: 0 auto;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+.row{
+	vertical-align: center;
+	height: 25%;
+}
