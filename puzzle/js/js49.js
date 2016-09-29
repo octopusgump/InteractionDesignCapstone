@@ -24,6 +24,7 @@ $( ".coverCell" ).click(function() {
 	}
 });
 
+
 //================cells================
 var score = 0;
 var level = 1;
@@ -67,26 +68,36 @@ $('.cell').click(function() {
    		
    		
    		//===WIN Text===
-   		// if (score >= 2){
-   		// 	$(".coverBackground").delay(130).animate({top: "0"}, 850);
-   		// 	document.getElementById("coverText").innerHTML = coverWinText; 
-   		// }
+   		if (score >= 5){
+   			$(".coverBackground").delay(130).animate({top: "0"}, 850);
+   			document.getElementById("coverText").innerHTML = coverWinText; 
+   		}
 
 
 		//===change opacity===
-
 		var opacityValue = $( this ).css( "opacity" );
 		opacityValue = opacityValue - 0.2;
-  		if(opacityValue < 0) opacityValue = 1;   
-  		$(this).animate({opacity : opacityValue}, 300);
-  		document.getElementById("show").innerHTML = opacityValue.toFixed(2);
-
+  		$(this).animate({opacity : opacityValue}, 23);
+  		var opacityValueRound = Math.floor((100 - opacityValue.toFixed(2) * 100));
+  		document.getElementById("show").innerHTML = opacityValueRound + "%";
+  		if(opacityValue <= 0){
+  			document.getElementById("show").innerHTML = "Good Job!";
+  			score = score + 1;
+			$(this).prepend('<img id="addedImg" src="image/r2d2.gif"/>');
+			$(this).click(function() {
+				score = score - 1;
+				document.getElementById("show").innerHTML = "Lose Points!";
+			});
+			document.getElementById("score").innerHTML = score; 
+  		}
+  
+  		
    		//===change cell opacity===
    		// var cellOpacity = $( this ).css( "opacity" );
    		// cellOpacity = cellOpacity - 0.2;
    		//  if (colorShow == "#FF5733"){
    		// 	$(this).animate({opacity: cellOpacity}, 300);
-   		// 	$(this).prepend('<img id="addedImg" src="image/r2d2.gif" />);
+   		// 	$(this).prepend('<img id="addedImg" src="image/r2d2.gif"/>');
    		//  }
 	
      	//change opacity
@@ -175,7 +186,7 @@ function getColorSet(){
 	];
 
 	var selectColor = colorSet[Math.floor(Math.random() * 5)];
-	console.log(selectColor);
+	//console.log(selectColor);
 	return selectColor;
 }
 
