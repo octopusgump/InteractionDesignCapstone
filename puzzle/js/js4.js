@@ -18,115 +18,99 @@
 //#0C97A1
 //#08646A
 
-//gradual blue
+//gradual blue #00466a
 //#05668D
 //#028090
 //#00A896
-//#95C1B8
+//#02C39A
 
-//#F0F3BD
-
+//#FF5733 orange
+//#05668D red
 $(document).ready(function(){
 //================Cover Page================
-	$( ".coverCell" ).click(function() {
-	//$(".coverBackground").delay(330).animate({top: "-=100%"}, 1000);
+//var coverValue = $(".coverCell:hover").css({'background': getColorSet(0)});
+var colorr="";
+$( ".coverCell" ).click(function() {
+	
+
+	coverColor= getColorSet();
+	$(".coverCell:hover").css('background', coverColor);
+	if(coverColor=="#FF5733"){
+		$(".coverBackground").delay(530).animate({top: "-=100%"}, 850);
+	}
 });
 
-
-$('.coverCell').click(function(){
-        if ($('.coverCell h1').data('count')) { // already been clicked
-            $('.coverCell h1').data('count', $('.coverCell h1').data('count') + 1); // add one
-        } else { // first click
-            $('.coverCell h1').data('count', 1); // initialize the count
-        }
-        $('.coverCell h1').html($('.coverCell h1').data('count')); // show it
-    });
-//================Add Div================
-//#1 change color
-function getRandomColor() {
-	var letters = '0123456789ABCDEF';
-	var color = '#';
-	for (var i = 0; i < 6; i++ ) {
-		color += letters[Math.floor(Math.random() * 16)];
-	}
-	return color;
-}
-//#2 change color
-var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-
-//change the puzzle shape
-function getFourRandomDiv(){
-	var allDiv =[
-	"one",
-	"two",
-	"three",
-	"four",
-	"Lucky!",
-	"Lucky!",
-	"Lucky!"
-	];
-	var selectDiv= allDiv[Math.floor(Math.random() * 7)];
-	return selectDiv;
-}	
-//get a random color set
-function getColorSet(){
-	var colorSet = [
-		// "#FFC116",
-		// "#FF4E00",
-		// "#DC0073",
-		// "#008BF8",
-		// "#89FC00",
-		// "#06AED5",
-		// "#086788",
-		// "#F0C808",
-		// "#FFF1D0",
-		// "#DD1C1A",
-		// "#011627",
-		// "#FDFFFC",
-		// "#2EC4B6",
-		// "#E71D36",
-		// "#FF9F1C"
-		"#05668D",
-		"#028090",
-		"#00A896",
-		"#95C1B8",
-		"#F0F3BD"
-];
-var selectColor = colorSet[Math.floor(Math.random() * 4)];
-return selectColor;
-}
-
-function getRandomBoxWidth(){
-	var boxWidthSet = [
-	"20%",
-	"25%",
-	"33.3%",
-	"50%",
-	"'" + Math.floor(Math.random() * 100) + "'"
-	];
-	var selectBoxWidth = boxWidthSet[Math.floor(Math.random() * 5)];
-	return selectBoxWidth;
-}
 //================cells================
+var score = 0;
+var level = 1;
+var coverWinText = 'You Won!'
 $('.cell').click(function() {
-	//$(this).css({'background-color': getRandomColor()});
-	$(this).css({'background-color': getColorSet()});
-     	//change opacity
-		// var opacityValue = $( this ).css( "opacity" );
-		// opacityValue = opacityValue - 0.2;
-  		// if(opacityValue < 0) opacityValue = 1;   
-  		// $(this).animate({opacity : opacityValue}, 300);
-
-   		//show opacity value
-   		// document.getElementById("showOpacity").innerHTML = opacityValue;
-   		document.getElementById("show").innerHTML = getFourRandomDiv();
+   		var colorShow = getColorSet();
+   		var textShow = "";
+   		switch(colorShow){
+   			case "#05668D":
+   			textShow = 'one!';
+   			break;
+   			case "#028090":
+   			textShow = 'two!';
+   			break;
+   			case "#00A896":
+   			textShow = 'three!';
+   			break;
+   			case "#02C39A":
+   			textShow = 'four!';
+   			break;
+   			case "#FF5733":
+   			textShow = '+1!';
+   			score = score + 1;
+   			break;
+   			default:
+   			textShow = 'LOL';
+   		}
+   		document.getElementById("show").innerHTML = textShow;
+   		document.getElementById("score").innerHTML = score; 
    		$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
    		$('.test').css({'width': getRandomBoxWidth()});
    		$('.hintBox').css({"z-index": '10'}); 
    		//$('.hintBox').animate({opacity: '1'}, 300);
-   	});
+   		$(this).css({'background-color': colorShow});
+   		
+   		//$(this).animate({opacity : 0.3}, 300);
+   		//WIN Text
+   		// if (score >= 2){
+   		// 	$(".coverBackground").delay(130).animate({top: "0"}, 850);
+   		// 	document.getElementById("coverText").innerHTML = coverWinText; 
+   		// }
 
-//================mouseover & mouseout================
+   		//once the color turn red, 'this' cell will disappear
+   		var cellOpacity = $( this ).css( "opacity" );
+   		cellOpacity = 0.3;
+   		 if (colorShow == "#FF5733"){
+   			$(this).animate({opacity: cellOpacity}, 300);
+   			$(this).prepend('<img id="addedImg" src="image/r2d2.gif" />')
+   		 }
+	
+     	//change opacity
+		// var opacityValue = $( this ).css( "opacity" );
+		// opacityValue = 0.2;
+  // 		if (getColorSet() == "#FF5733") {  
+  // 			$(this).animate({opacity : opacityValue}, 300);
+  // 		}
+   	});
+//================panel================
+$( '.button #score' ).mouseover(function() {
+	document.getElementById("score").innerHTML = 'score'; 
+});
+$( '.button #score' ).mouseout(function() {
+	document.getElementById("score").innerHTML = score; 
+});
+$( '.button #level' ).mouseover(function() { 
+	document.getElementById("level").innerHTML = 'level'; 
+});
+$( '.button #level' ).mouseout(function() { 
+	document.getElementById("level").innerHTML = level; 
+});
+//================Cell mouseover & mouseout================
 $( '.cell' ).mouseover(function() {
 	var animateThis = $(this).css('-webkit-animation-iteration-count');
 	if(animateThis <= 2) animateThis = 3;
@@ -155,5 +139,55 @@ $( '.test' ).mouseover(function() {
 });
 
 });
-//show the first div's opacity, take it out, assign a new variable, and -0.1
-//read the first div's opacity, store as a new variable, and put the new variable into the opacity
+
+
+//================Add Div================
+//#1 change color
+function getRandomColor() {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++ ) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
+//#2 change color
+var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+
+//change the puzzle shape
+function getFourRandomDiv(){
+	var allDiv =[
+	"one",
+	"two",
+	"three",
+	"four"	
+	];
+	var selectDiv= allDiv[Math.floor(Math.random() * 7)];
+	return selectDiv;
+}	
+//get a random color set
+function getColorSet(){
+	var colorSet = [
+	"#05668D",
+	"#028090",
+	"#00A896",
+	"#02C39A",
+	"#FF5733"
+	];
+
+	var selectColor = colorSet[Math.floor(Math.random() * 5)];
+	console.log(selectColor);
+	return selectColor;
+}
+
+function getRandomBoxWidth(){
+	var boxWidthSet = [
+	"20%",
+	"25%",
+	"33.3%",
+	"50%",
+	"'" + Math.floor(Math.random() * 100) + "'"
+	];
+	var selectBoxWidth = boxWidthSet[Math.floor(Math.random() * 5)];
+	return selectBoxWidth;
+}
