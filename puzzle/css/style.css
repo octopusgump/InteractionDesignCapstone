@@ -76,6 +76,7 @@ margin: 0 auto;
 float: left;
 overflow: hidden;
 position: relative;
+background: #FF5733;
 }
 .cell:hover{
 	box-shadow: 0 15px 0px #333533;

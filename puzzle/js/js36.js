@@ -1,23 +1,3 @@
-//red
-//#581845
-//#900C3F
-//#C70039
-//#FF5733
-//#FFC30F
-
-//blue
-//#84A98C
-//#52796F
-//#354F52
-//#2F3E46
-
-//cryan
-//#12E7F7
-//#11DBEA
-//#10C4D0
-//#0C97A1
-//#08646A
-
 //gradual blue #00466a
 //#05668D
 //#028090
@@ -47,48 +27,63 @@ var coverWinText = 'You Won!'
 $('.cell').click(function() {
    		var colorShow = getColorSet();
    		var textShow = "";
-   		switch(colorShow){
-   			case "#05668D":
-   			textShow = 'one!';
-   			break;
-   			case "#028090":
-   			textShow = 'two!';
-   			break;
-   			case "#00A896":
-   			textShow = 'three!';
-   			break;
-   			case "#02C39A":
-   			textShow = 'four!';
-   			break;
-   			case "#FF5733":
-   			textShow = '+1!';
-   			score = score + 1;
-   			break;
-   			default:
-   			textShow = 'LOL';
-   		}
+
+   		//===Switch Statement Show Text and Score
+   		// switch(colorShow){
+   		// 	case "#05668D":
+   		// 	textShow = 'one!';
+   		// 	break;
+   		// 	case "#028090":
+   		// 	textShow = 'two!';
+   		// 	break;
+   		// 	case "#00A896":
+   		// 	textShow = 'three!';
+   		// 	break;
+   		// 	case "#02C39A":
+   		// 	textShow = 'four!';
+   		// 	break;
+   		// 	case "#FF5733":
+   		// 	textShow = '+1!';
+   		// 	score = score + 1;
+   		// 	break;
+   		// 	default:
+   		// 	textShow = 'LOL';
+   		// }
    		//document.getElementById("show").innerHTML = textShow;
-   		document.getElementById("score").innerHTML = score; 
-   		$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
-   		$('.test').css({'width': getRandomBoxWidth()});
+   		//document.getElementById("score").innerHTML = score; 
+
+   		//===Add Test Div===
+   		//$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
+   		//$('.test').css({'width': getRandomBoxWidth()});
    		$('.hintBox').css({"z-index": '10'}); 
    		//$('.hintBox').animate({opacity: '1'}, 300);
-   		$(this).css({'background-color': colorShow});
+
+   		//===change box to a random color===
+   		//$(this).css({'background-color': colorShow});
    		
-   		//$(this).animate({opacity : 0.3}, 300);
-   		//WIN Text
+   		
+   		//===WIN Text===
    		// if (score >= 2){
    		// 	$(".coverBackground").delay(130).animate({top: "0"}, 850);
    		// 	document.getElementById("coverText").innerHTML = coverWinText; 
    		// }
 
-   		//once the color turn red, 'this' cell will disappear
-   		var cellOpacity = $( this ).css( "opacity" );
-   		cellOpacity = 0.3;
-   		 if (colorShow == "#FF5733"){
-   			$(this).animate({opacity: cellOpacity}, 300);
-   			$(this).prepend('<img id="addedImg" src="image/r2d2.gif" />')
-   		 }
+
+		//===change opacity===
+
+		var opacityValue = $( this ).css( "opacity" );
+		opacityValue = opacityValue - 0.2;
+  		if(opacityValue < 0) opacityValue = 1;   
+  		$(this).animate({opacity : opacityValue}, 300);
+  		document.getElementById("show").innerHTML = opacityValue.toFixed(2);
+
+   		//===change cell opacity===
+   		// var cellOpacity = $( this ).css( "opacity" );
+   		// cellOpacity = cellOpacity - 0.2;
+   		//  if (colorShow == "#FF5733"){
+   		// 	$(this).animate({opacity: cellOpacity}, 300);
+   		// 	$(this).prepend('<img id="addedImg" src="image/r2d2.gif" />);
+   		//  }
 	
      	//change opacity
 		// var opacityValue = $( this ).css( "opacity" );
