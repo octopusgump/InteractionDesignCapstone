@@ -10,14 +10,17 @@
 //write a function that change the cell width and height correspondingly
 //through css and js
 //so the screen width and height will never exceed from a single screen
+
+
+//var cellWidth;
+//if(cellWidth == ){
+//
+//}
 $(document).ready(function(){
 //================Cover Page================
 //var coverValue = $(".coverCell:hover").css({'background': getColorSet(0)});
-var colorr="";
 $( ".coverCell" ).click(function() {
-	
-
-	coverColor= getColorSet();
+	var coverColor= getColorSet();
 	$(".coverCell:hover").css('background', coverColor);
 	if(coverColor=="#FF5733"){
 		$(".coverBackground").delay(530).animate({top: "-=100%"}, 850);
@@ -26,9 +29,15 @@ $( ".coverCell" ).click(function() {
 
 
 //================cells================
+var cellNum = $('.cell').length;
+var cellNumSqrt = Math.sqrt(cellNum);
+var cellWidth = Math.floor(100/cellNumSqrt);
+console.log(cellNum);
+console.log(cellWidth);
+
 var score = 0;
 var level = 1;
-var coverWinText = 'You Won!'
+var coverWinText = 'You Win!'
 $('.cell').click(function() {
    		var colorShow = getColorSet();
    		var textShow = "";
@@ -58,8 +67,11 @@ $('.cell').click(function() {
    		//document.getElementById("score").innerHTML = score; 
 
    		//===Add Test Div===
-   		//$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
-   		//$('.test').css({'width': getRandomBoxWidth()});
+   		$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
+   		$('.test').css(
+   			{'width': cellWidth +'%'},
+   			{'height': cellWidth +'%'}
+   			);
    		$('.hintBox').css({"z-index": '10'}); 
    		//$('.hintBox').animate({opacity: '1'}, 300);
 
@@ -105,7 +117,7 @@ $('.cell').click(function() {
   // 		if (getColorSet() == "#FF5733") {  
   // 			$(this).animate({opacity : opacityValue}, 300);
   // 		}
-   	});
+   		});
 //================panel================
 $( '.button #score' ).mouseover(function() {
 	document.getElementById("score").innerHTML = 'score'; 
