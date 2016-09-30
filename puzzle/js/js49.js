@@ -67,11 +67,6 @@ $('.cell').click(function() {
    		//$(this).css({'background-color': colorShow});
    		
    		
-   		//===WIN Text===
-   		if (score >= 5){
-   			$(".coverBackground").delay(130).animate({top: "0"}, 850);
-   			document.getElementById("coverText").innerHTML = coverWinText; 
-   		}
 
 
 		//===change opacity===
@@ -91,7 +86,11 @@ $('.cell').click(function() {
 			document.getElementById("score").innerHTML = score; 
   		}
   
-  		
+  		//===WIN Text===
+   		if (score > 7){
+   			$(".coverBackground").delay(130).animate({top: "0"}, 850);
+   			document.getElementById("coverText").innerHTML = coverWinText; 
+   		}
    		//===change cell opacity===
    		// var cellOpacity = $( this ).css( "opacity" );
    		// cellOpacity = cellOpacity - 0.2;
