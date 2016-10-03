@@ -17,6 +17,10 @@
 //
 //}
 $(document).ready(function(){
+//================clock down================
+var deadline = new Date(Date.parse(new Date()) + 40 * 1000);
+initializeClock('clockdiv', deadline);
+
 //================Cover Page================
 //var coverValue = $(".coverCell:hover").css({'background': getColorSet(0)});
 $( ".coverCell" ).click(function() {
@@ -29,18 +33,12 @@ $( ".coverCell" ).click(function() {
 
 
 //================cells================
-var cellNum = $('.cell').length;
-var cellNumSqrt = Math.sqrt(cellNum);
-var cellWidth = Math.floor(100/cellNumSqrt);
-console.log(cellNum);
-console.log(cellWidth);
-
 var score = 0;
 var level = 1;
 var coverWinText = 'You Win!'
 $('.cell').click(function() {
-   		var colorShow = getColorSet();
-   		var textShow = "";
+	var colorShow = getColorSet();
+	var textShow = "";
 
    		//===Switch Statement Show Text and Score
    		// switch(colorShow){
@@ -67,42 +65,50 @@ $('.cell').click(function() {
    		//document.getElementById("score").innerHTML = score; 
 
    		//===Add Test Div===
-   		$( "#" + getFourRandomDiv() ).after( "<div class='test'></div>" );
-   		$('.test').css(
-   			{'width': cellWidth +'%'},
-   			{'height': cellWidth +'%'}
-   			);
+   		var cellNum = $('.cell').length;
+   		var cellNumSqrt = Math.sqrt(cellNum);
+   		var cellWidth = Math.floor(100/cellNumSqrt);
+   		//console.log(cellNum);
+   		//console.log(cellWidth);
+   		//$( "#" + getRandomDiv() ).after( "<div class='test'></div>" );
+   		//$( this ).after( "<div class='test'></div>" );
+   		//change width
+   		$('.test').css({'width': cellWidth + '%'});
+   		$('.test').css({'height': cellWidth + '%'});
+
    		$('.hintBox').css({"z-index": '10'}); 
    		//$('.hintBox').animate({opacity: '1'}, 300);
 
    		//===change box to a random color===
    		//$(this).css({'background-color': colorShow});
-   		
-   		
-
 
 		//===change opacity===
 		var opacityValue = $( this ).css( "opacity" );
 		opacityValue = opacityValue - 0.2;
-  		$(this).animate({opacity : opacityValue}, 23);
-  		var opacityValueRound = Math.floor((100 - opacityValue.toFixed(2) * 100));
-  		document.getElementById("show").innerHTML = opacityValueRound + "%";
-  		if(opacityValue <= 0){
-  			document.getElementById("show").innerHTML = "Good Job!";
-  			score = score + 1;
+		$(this).animate({opacity : opacityValue}, 23);
+		var opacityValueRound = Math.floor((100 - opacityValue.toFixed(2) * 100));
+		document.getElementById("show").innerHTML = opacityValueRound + "%";
+		if(opacityValue <= 0){
+			document.getElementById("show").innerHTML = "Good Job!";
+			score = score + 1;
 			$(this).prepend('<img id="addedImg" src="image/r2d2.gif"/>');
 			$(this).click(function() {
 				score = score - 1;
 				document.getElementById("show").innerHTML = "Lose Points!";
 			});
 			document.getElementById("score").innerHTML = score; 
-  		}
-  
-  		//===WIN Text===
-   		if (score > 7){
-   			$(".coverBackground").delay(130).animate({top: "0"}, 850);
-   			document.getElementById("coverText").innerHTML = coverWinText; 
-   		}
+		}
+		//===Change Background Image===
+		// if (score >= 12){
+		// 	$('body').css('<img src="image/pixel2.gif"/>');
+		// } 
+		//===Lose Text===
+		document.getElementById("coverText").innerHTML = "You Lose"; 
+		$(".coverBackground").delay(40000).animate({top: "0"}, 850);
+
+		//===Play Sound===
+		var audio = new Audio('sound/cartoonWalking.mp3');
+		audio.play();
    		//===change cell opacity===
    		// var cellOpacity = $( this ).css( "opacity" );
    		// cellOpacity = cellOpacity - 0.2;
@@ -110,14 +116,23 @@ $('.cell').click(function() {
    		// 	$(this).animate({opacity: cellOpacity}, 300);
    		// 	$(this).prepend('<img id="addedImg" src="image/r2d2.gif"/>');
    		//  }
-	
+
      	//change opacity
 		// var opacityValue = $( this ).css( "opacity" );
 		// opacityValue = 0.2;
   // 		if (getColorSet() == "#FF5733") {  
   // 			$(this).animate({opacity : opacityValue}, 300);
   // 		}
-   		});
+});
+
+//===WIN Text===
+$(document.body).mouseover(function() {
+	if (score >= 10){
+		$(".coverBackground").delay(100).animate({top: "0"}, 850);
+		document.getElementById("coverText").innerHTML = "You Win!"; 
+	} 
+});
+
 //================panel================
 $( '.button #score' ).mouseover(function() {
 	document.getElementById("score").innerHTML = 'score'; 
@@ -130,6 +145,12 @@ $( '.button #level' ).mouseover(function() {
 });
 $( '.button #level' ).mouseout(function() { 
 	document.getElementById("level").innerHTML = level; 
+});
+$( '.button #seconds' ).mouseover(function() { 
+	document.getElementById("seconds").innerHTML = 'seconds'; 
+});
+$( '.button #seconds' ).mouseout(function() { 
+	document.getElementById("seconds").innerHTML = seconds; 
 });
 //================Cell mouseover & mouseout================
 $( '.cell' ).mouseover(function() {
@@ -176,16 +197,7 @@ function getRandomColor() {
 var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 
 //change the puzzle shape
-function getFourRandomDiv(){
-	var allDiv =[
-	"one",
-	"two",
-	"three",
-	"four"	
-	];
-	var selectDiv= allDiv[Math.floor(Math.random() * 7)];
-	return selectDiv;
-}	
+
 //get a random color set
 function getColorSet(){
 	var colorSet = [
@@ -211,4 +223,33 @@ function getRandomBoxWidth(){
 	];
 	var selectBoxWidth = boxWidthSet[Math.floor(Math.random() * 5)];
 	return selectBoxWidth;
+}
+
+function getTimeRemaining(endtime) {
+	//time remained
+	var t = Date.parse(endtime) - Date.parse(new Date());
+	//initial time
+	var seconds = Math.floor((t / 1000) % 60);
+	return {
+		'total': t,
+		'seconds': seconds
+	};
+}
+
+function initializeClock(id, endtime) {
+	var clock = document.getElementById(id);
+	var secondsSpan = clock.querySelector('.seconds');
+
+	function updateClock() {
+		var t = getTimeRemaining(endtime);
+
+		secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+		if (t.total <= 0) {
+			clearInterval(timeinterval);
+		}
+	}
+
+	updateClock();
+	var timeinterval = setInterval(updateClock, 1000);
 }

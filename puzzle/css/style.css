@@ -13,7 +13,6 @@ html, body {
 	width: 100%;
 	margin: 0;	
 }
-
 /*================Cover Page================*/
 .coverBackground{
 	width: 100%;
@@ -71,7 +70,7 @@ html, body {
 	cursor: pointer;
 /*	width: 25%;
 height: 100%;*/	
-border: 2px solid #333533;
+/*border: 2px solid #333533;*/
 margin: 0 auto;
 float: left;
 overflow: hidden;
@@ -80,7 +79,7 @@ background: #FF5733;
 }
 .cell:hover{
 	box-shadow: 0 15px 0px #333533;
-	border-bottom: 2px solid #333533;
+	/*border-bottom: 2px solid #333533;*/
 	transition: all 0.1s ease-in;
 }
 .cell:active{
@@ -161,10 +160,10 @@ background: #FF5733;
 	margin: 0;
 }
 
-.container{
+/*.container{
 	height: 100%;
 	width: 100%;
-}
+}*/
 
 .container{
 	position: absolute;
@@ -173,8 +172,8 @@ background: #FF5733;
 	left:0;
 	right: 0;
 	margin: auto;
-	width: 80%;
-	height: 78%;
+	width: 100%;
+	height: 100%;
 }
 
 .hintBox{
@@ -187,13 +186,14 @@ background: #FF5733;
 	width: 100%;
 	height: 80px;
 	/*z-index: 10;*/
-	text-align: center;
+	text-align: left;
 }
 .hintBox h1{
-	font-size: 60px;
+	font-size: 50px;
 	text-transform: uppercase;
 	color: #242423; 
-	margin: 0;
+    margin-left: 10%;
+    margin-top: 0;
 }
 
 .panel{
@@ -212,13 +212,25 @@ background: #FF5733;
 	background-color: #333533;
 	cursor: pointer;
 	width: 25%;
-	height: 100%;
+	/*height: 100%;*/
 	margin: 0 auto;
 	float: left;
 	overflow: hidden;
 	position: relative;
+	box-shadow: 0 10px 0px #333533;
 }
+.test:hover{
+	background: #028090;
+	box-shadow: 0 4px 1px #05668D;
+	border-bottom: 2px solid #05668D;
+	transition: all 0.1s ease-in;
 
+}
+.test:active{
+	transform:translateY(4px);
+	border-bottom-width: 2px;
+	box-shadow: none;
+}
 ol, ul {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1rem;
