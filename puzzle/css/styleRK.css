@@ -1,0 +1,79 @@
+body {
+	background-color: #00A896 ;
+}
+.cell {
+	width: 25%;
+	height: 33.3%;
+	position: absolute;
+	background: #00A896;
+	z-index: 10;
+}
+.cell:hover{
+	background: #00a393;
+}
+#one{
+	top: 0%;
+	left: 0%;
+}
+#two{
+	top: 0%;
+	left: 25%;
+
+}
+#three{
+	top: 0%;
+	left: 50%;
+}
+#four{
+	top: 0%;
+	left: 75%;
+}
+#five{
+	top: 33.3%;
+	left: 0%;
+}
+#six{
+	top: 33.3%;
+	left: 0%;
+	width: 50%;
+}
+#seven{
+	top: 33.3%;
+	left: 50%;
+	width: 50%;
+}
+#eight{
+	top: 33.3%;
+	left: 75%;
+}
+#nine{
+	top: 66.6%;
+	left: 0%;
+}
+#ten{
+	top: 66.6%;
+	left: 25%;
+}
+#eleven{
+	top: 66.6%;
+	left: 50%;
+}
+#twelve{
+	top: 66.6%;
+	left: 75%;
+}
+
+.container{
+	margin: 0 10%;
+	width: 80%;
+	height: 100%;
+}
+
+.coverFooter{
+	bottom: -5px;
+	position: absolute;
+	width: 110%;
+	height: 50px;
+	background: #00A896;
+	z-index: 5;
+}
